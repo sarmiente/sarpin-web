@@ -2,6 +2,8 @@
 import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
+import { Picture } from "astro:assets";
+import Logo from "assets/sarpin_devs_logo.png";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
@@ -27,10 +29,7 @@ const menuitems = [
     title: "Blog",
     path: "/blog",
   },
-  {
-    title: "Contact",
-    path: "/contact",
-  },
+  
   {
     title: "Pro Version",
     badge: true,
@@ -44,9 +43,16 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Sarpin</span><span
-            class="text-slate-500"> WebDev</span
-          >
+          >{/*<span class="font-bold text-slate-800">Sarpin</span><span
+          class="text-slate-500">Devs</span
+        > */}
+        <Picture
+        src={Logo}
+        alt="Logo"
+         sizes="(max-width: 185px)"
+        loading="eager"
+        
+      />
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -91,8 +97,8 @@ const menuitems = [
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Log in</a>
-        <Link href="#" size="md">Sign up</Link>
+        {/*<a href="#">Log in</a> */}
+        <Link href="/contact" size="md">Contact</Link>
       </div>
     </div>
   </header>
