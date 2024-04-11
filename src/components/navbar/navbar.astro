@@ -1,7 +1,7 @@
 ---
 import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
-import Dropdown from "./dropdown.astro";
+
 import { Picture } from "astro:assets";
 import Logo from "assets/sarpin_devs_logo.png";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
@@ -63,6 +63,7 @@ const menuitems = [
           {
             menuitems.map((item, index) => (
               <>
+                {/*
                 {item.children && (
                   <Dropdown
                     title={item.title}
@@ -71,6 +72,7 @@ const menuitems = [
                   />
                 )}
 
+                */}
                 {!item.children && (
                   <li>
                     <a
@@ -89,10 +91,18 @@ const menuitems = [
             ))
           }
         </ul>
-        <div class="lg:hidden flex items-center mt-3 gap-4">
+        <div>
+          <div class="mt-5 lg:hidden lg:flex items-center gap-4">
+            {/*<a href="#">Log in</a> */}
+            <Link href="/contact" size="md">Contact</Link>
+          </div>
+        </div>
+      {/*
+          <div class="lg:hidden flex items-center mt-3 gap-4">
           <Link href="#" style="muted" block size="md">Log in</Link>
           <Link href="#" size="md" block>Sign up</Link>
         </div>
+      */}
       </MenuItems>
     </Astronav>
     <div>
