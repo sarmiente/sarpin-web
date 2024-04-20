@@ -1,39 +1,22 @@
 ---
 import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
-
 import { Picture } from "astro:assets";
 import Logo from "assets/sarpin_devs_logo.png";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
-  {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
-    ],
-  },
-  {
-    title: "Pricing",
+   {
+    title: "Precios",
     path: "/pricing",
   },
   {
-    title: "About",
+    title: "Nosotros",
     path: "/about",
   },
   {
     title: "Blog",
     path: "/blog",
-  },
-  
-  {
-    title: "Pro Version",
-    badge: true,
-    path: "https://astroship-pro.web3templates.com/",
   },
 ];
 ---
@@ -61,29 +44,19 @@ const menuitems = [
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
         <ul class="flex flex-col lg:flex-row lg:gap-3">
           {
-            menuitems.map((item, index) => (
+            menuitems.map((item) => (
               <>
-                {/*
-                {item.children && (
-                  <Dropdown
-                    title={item.title}
-                    children={item.children}
-                    lastItem={index === menuitems.length - 1}
-                  />
-                )}
-
-                */}
-                {!item.children && (
+                {item && (
                   <li>
                     <a
                       href={item.path}
                       class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
                       <span> {item.title}</span>
-                      {item.badge && (
+                      {/* {item.badge && (
                         <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
                           New
                         </span>
-                      )}
+                      )} */}
                     </a>
                   </li>
                 )}
@@ -92,23 +65,17 @@ const menuitems = [
           }
         </ul>
         <div>
-          <div class="mt-5 lg:hidden lg:flex items-center gap-4">
-            {/*<a href="#">Log in</a> */}
-            <Link href="/contact" size="md">Contact</Link>
+          <div class="mt-5 lg:hidden items-center gap-4">
+            <Link href="/contact" size="md">Contacto</Link>
           </div>
-        </div>
-      {/*
-          <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Log in</Link>
-          <Link href="#" size="md" block>Sign up</Link>
-        </div>
-      */}
+        </div>     
       </MenuItems>
+      
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
         {/*<a href="#">Log in</a> */}
-        <Link href="/contact" size="md">Contact</Link>
+        <Link href="/contact" size="md">Contacto</Link>
       </div>
     </div>
   </header>
