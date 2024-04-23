@@ -1,5 +1,20 @@
 ---
 import Button from "./ui/button.astro";
+const phoneRegex = /^\d{10}$/;
+  let isValid = false;
+
+  function validatePhoneNumber(event) {
+    const input = event.target;
+    const phoneNumber = input.value;
+
+    if (phoneRegex.test(phoneNumber)) {
+      isValid = true;
+      input.nextElementSibling.style.display = "none"; // Hide error message
+    } else {
+      isValid = false;
+      input.nextElementSibling.style.display = "block"; // Show error message
+    }
+  }
 ---
 
 <!-- To make this contact form work, create your free access key from https://web3forms.com/
@@ -40,6 +55,8 @@ import Button from "./ui/button.astro";
     <div class="invalid-feedback text-red-400 text-sm mt-1">
       Please provide a valid email address.
     </div>
+  </div>
+ 
   </div>
   <div class="mb-3">
     <textarea
