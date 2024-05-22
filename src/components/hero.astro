@@ -1,9 +1,126 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "assets/imageHero.png";
-import Link from "@components/ui/link.astro"
+import heroImage from "assets/hero_1.png";
+import whatLogo from "assets/whatsapp_logo.svg";
+
+import Link from "@components/ui/link.astro";
 ---
 
+<!-- ============================================ --><!--                   Hero                       --><!-- ============================================ -->
+<section
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div
+    class="max-w-[550px] mx-auto flex flex-col justify-center items-center gap-[80px]">
+    <div class="max-w-[630px] pr-4 flex justify-start items-center flex-wrap">
+      <h2
+        class="text-[48px] font-black leading-[1.2] text-left max-w-[700px] mb-[24px] text-[#1a1a1a] relative">
+        <span class="text-[#0094FF] block">All the Best Plant</span> Under One Roof
+      </h2>
+      <p
+        class="text-[25px] leading-[1.5] text-left max-w-[650px] mb-[48px] text-[#4e4b66]">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut.
+      </p>
+      
+      <div class="pb-12 inline-flex items-center gap-2">
+        <a target="_blank" rel="noopener noreferrer"
+          href="https://wa.me/573002982949?text=Hello%20I%20would%20like%20to%20know%20more%20about%20your%20services"
+          class="p-3 inline-flex bg-green-500 text-white text-lg font-medium rounded hover:bg-green-600 transition-colors duration-300">
+          <Picture class="mr-2" alt="Astronaut in the air" width={25} src={whatLogo} />
+          Get A Quote
+        </a>
+        <a
+        href="https://wa.me/573002982949?text=Hello%20I%20would%20like%20to%20know%20more%20about%20your%20services"
+        class="p-3 inline-flex items-center  bg-orange-500 text-white text-lg font-medium rounded hover:bg-black transition-colors duration-300">
+        
+        Our Services
+      </a>
+
+
+      </div>
+
+
+      <div class="md:order-1 hidden md:block">
+        <span
+          class="text-[20px] leading-[1.5] mt-[80px] w-full text-[#4e4b66] block">
+          Trusted by:
+        </span>
+        <div class="gap-2 w-full flex justify-between items-center pb-8">
+          <!--Logo 1-->
+          <img
+            class="h-[32px] grayscale"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Hero/logo1.svg"
+            alt="logo"
+            width="113"
+            height="31"
+            decoding="async"
+          />
+          <!--Logo 2-->
+          <img
+            class="h-[32px] grayscale"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Hero/logo2.svg"
+            alt="logo"
+            width="113"
+            height="40"
+            decoding="async"
+          />
+          <!--Logo 3-->
+          <img
+            class="h-[32px] grayscale"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Hero/logo3.svg"
+            alt="logo"
+            width="113"
+            height="30"
+            decoding="async"
+          />
+          <!--Logo 4-->
+          <img
+            class="h-[32px] grayscale"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Hero/logo4.svg"
+            alt="logo"
+            width="113"
+            height="37"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="w-full flex justify-center items-end relative overflow-hidden rounded-tl-[20px] aspect-[0.92696629]">
+    <Picture
+      class="absolute inset-0 w-full h-full object-cover"
+      src={heroImage}
+      alt="Astronaut in the air"
+      widths={[200, 400, 600]}
+      sizes="(max-width: 800px) 100vw, 620px"
+      loading="eager"
+      format="avif"
+    />
+    {
+      /*
+      
+    <div class="z-10 w-1/2 h-[150px] p-[24px] bg-[#00C2FF] text-white flex flex-col justify-center items-center box-border">
+        <span class="text-[48px] leading-[1.2]">
+            16
+            <span class="text-[20px] leading-[1.2] mt-1 block">Finalized Projects</span>
+        </span>
+    </div>
+    <div class="z-10 w-1/2 h-[150px] p-[24px] bg-[#0094FF] text-white flex flex-col justify-center items-center box-border">
+        <span class="text-[48px] leading-[1.2]">
+            5/5
+            <span class="text-[20px] leading-[1.2] mt-1 block">Customers Rating</span>
+        </span>
+
+    </div>
+*/
+    }
+  </div>
+</section>
+
+{
+  /*
+                                
 <main
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
   <div class="py-6 md:order-1 hidden md:block">
@@ -16,24 +133,29 @@ import Link from "@components/ui/link.astro"
       format="avif"
     />
   </div>
+
+
   <div>
     <h1
-      class="text-5xl lg:text-6xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Diseño y Desarrollo 
+      class="text-4xl lg:text-6xl xl:text-6xl font-bold lg:tracking-tight xl:tracking-tighter">
+      Diseño y Desarrollo   
       <br>de Paginas Web
     </h1>
+
     <p class="text-lg mt-4 text-slate-600 max-w-xl">
       Permitanos crear su pagina web con diseños modernos y visualmente atractivos que su sitio web sea la mejor presentacion de su negocio, marca o producto.
     </p>
+
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
+
       <Link
-        href="#contact"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
+        href="/contact"
         target="_blank"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
         Contactanos
       </Link>
+
       {/*
         <Link
         size="lg"
@@ -45,7 +167,9 @@ import Link from "@components/ui/link.astro"
         <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
          Explore
       </Link>
-      */}
+
     </div>
   </div>
 </main>
+*/
+}
