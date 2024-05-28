@@ -7,6 +7,9 @@ module.exports = {
       fontFamily: {
         sans: ["Inter Variable", "Inter", ...defaultTheme.fontFamily.sans],
       },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      }
     },
   },
   plugins: [require("@tailwindcss/typography")],
